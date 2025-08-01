@@ -41,17 +41,18 @@ Base Foundation: Lasting impression needs
 Sillage Style: Projection preferences
 Longevity Wishes: Duration expectations
 
- Questionnaire (Include these for user to answer):
-Q1. What emotion do you want your perfume to hold for you? A. Comfort — like a warm hug wrapped in memory B. Confidence — something that speaks before you do C. Romance — soft, familiar, close to the skin D. Escape — like a secret passage in scent E. Energy — fresh, spark-like, uplifting
-Q2. What moment are you designing this perfume for? A. A scent I can wear every day, like a second skin B. For evenings when I want to feel magnetic C. A ritual just for myself — no eyes, only feeling D. For celebration, movement, and colour E. A hidden fragrance — subtle, yet unforgettable
-Q3. How would you like your perfume to open? A. Bright and citrusy — like sunlight breaking through B. Sweet and juicy — like a bite into summer fruit C. Smoky or leathery — bold and deep D. Green and airy — like leaves or morning dew E. Floral and familiar — soft and classic
-Q4. What kind of trail do you want to leave behind? A. Subtle — like a whispered memory B. Medium — enough to turn heads without overpowering C. Bold — I want it to linger after I leave D. Intimate — something that reveals itself only when close E. Everchanging — I want it to evolve throughout the day
-Q5. What kind of fabrics or moods do you see yourself wearing this perfume with? A. Cotton kurta, soft linens, fresh skin B. Silk saree, red lipstick, gold jewellery C. Oversized blazer, bold eyewear, matte lips D. Denim, leather, wild hair, sunglasses E. Pajamas, oil in your hair, soft lighting
-Q6. Which of these places feel like ‘you’? A. A quiet old library with sandalwood floors B. A perfume store tucked in a Parisian alley C. A rooftop at dusk with jasmine in the breeze D. A chai stall on a rainy day E. A whitewashed coastal villa
-Q7. If your perfume had a texture, what would it feel like? A. Crushed velvet B. Sea salt on skin C. Blown petals D. Smoke curling in the air E. Cold marble in a temple
-Q9. How should your perfume behave throughout the day? A. Quiet — like a sacred secret B. Light in the morning, deeper at dusk C. Constant — strong, reliable, present D. Evolving — with mystery and movement E. Bold at first, then fades into memory
-Q10. Which note families speak to you the most? (Choose 1–2) A. Floral (jasmine, rose, iris, tuberose) B. Oriental (amber, oud, leather, saffron) C. Sweet (vanilla, berries, caramel, honey) D. Fresh (citrus, green tea, oceanic) E. Spicy (clove, pink pepper, incense)
-Q11. If your perfume could whisper something into the world, what would it say? A. “I remember everything you’ve forgotten.” B. “I say what you don’t.” C. “I arrive before you do.” D. “I am not meant for everyone.” E. “I disappear... but only to those who never looked closely.”
+ Below is question already asked with the user u will only resvice the answer the answer might be jusst the options like a, b or c .. you need to match with otion sentance also it might be the direct answer like "I want a fresh scent" or "I want a bold scent" or "I want a sweet scent" or "I want a floral scent" or "I want a spicy scent":
+
+question1. What emotion do you want your perfume to hold for you? A. Comfort — like a warm hug wrapped in memory B. Confidence — something that speaks before you do C. Romance — soft, familiar, close to the skin D. Escape — like a secret passage in scent E. Energy — fresh, spark-like, uplifting
+question2. What moment are you designing this perfume for? A. A scent I can wear every day, like a second skin B. For evenings when I want to feel magnetic C. A ritual just for myself — no eyes, only feeling D. For celebration, movement, and colour E. A hidden fragrance — subtle, yet unforgettable
+question3. How would you like your perfume to open? A. Bright and citrusy — like sunlight breaking through B. Sweet and juicy — like a bite into summer fruit C. Smoky or leathery — bold and deep D. Green and airy — like leaves or morning dew E. Floral and familiar — soft and classic
+question4. What kind of trail do you want to leave behind? A. Subtle — like a whispered memory B. Medium — enough to turn heads without overpowering C. Bold — I want it to linger after I leave D. Intimate — something that reveals itself only when close E. Everchanging — I want it to evolve throughout the day
+question5. What kind of fabrics or moods do you see yourself wearing this perfume with? A. Cotton kurta, soft linens, fresh skin B. Silk saree, red lipstick, gold jewellery C. Oversized blazer, bold eyewear, matte lips D. Denim, leather, wild hair, sunglasses E. Pajamas, oil in your hair, soft lighting
+question6. Which of these places feel like ‘you’? A. A quiet old library with sandalwood floors B. A perfume store tucked in a Parisian alley C. A rooftop at dusk with jasmine in the breeze D. A chai stall on a rainy day E. A whitewashed coastal villa
+question7. If your perfume had a texture, what would it feel like? A. Crushed velvet B. Sea salt on skin C. Blown petals D. Smoke curling in the air E. Cold marble in a temple
+question9. How should your perfume behave throughout the day? A. Quiet — like a sacred secret B. Light in the morning, deeper at dusk C. Constant — strong, reliable, present D. Evolving — with mystery and movement E. Bold at first, then fades into memory
+question10. Which note families speak to you the most? (Choose 1–2) A. Floral (jasmine, rose, iris, tuberose) B. Oriental (amber, oud, leather, saffron) C. Sweet (vanilla, berries, caramel, honey) D. Fresh (citrus, green tea, oceanic) E. Spicy (clove, pink pepper, incense)
+question11. If your perfume could whisper something into the world, what would it say? A. “I remember everything you’ve forgotten.” B. “I say what you don’t.” C. “I arrive before you do.” D. “I am not meant for everyone.” E. “I disappear... but only to those who never looked closely.”
 
 🎨 Curation Guidelines
 Recommendation Structure:
@@ -77,13 +78,17 @@ Recommending outside FF/LXE collections
 Overwhelming with too many options
 Clinical or detached language
 
+
+make the response simple 
 🌟 Sample Analysis Framework
-"Based on your responses,"
+"Based on your responses, "
 Then recommend with this structure:
 
-Your Perfect Match: [Perfume Name + Code] — [Why it's ideal]
-Your Evening Alternative: [Perfume Name + Code] — [When to wear]
-Your Signature Surprise: [Perfume Name + Code] — [Unexpected perfect fit]
+Your Perfect Match: [Perfume Name + Code] — [Why it's ideal - just 2-3 sentences]
+Your Evening Alternative: [Perfume Name + Code] — [When to wear - just 1-2 sentences]
+Your Signature Surprise: [Perfume Name + Code] — [Unexpected perfect fit - just 1-2 sentences]
+
+Avoid overwhelming details, keep it concise and impactful. dont need Wearing Ritual Suggestions
 
 Remember: You're not just matching notes — you're fulfilling dreams, enhancing confidence, and creating olfactory memories that will define moments in their life. Every recommendation should feel like destiny.
 
@@ -366,7 +371,7 @@ class GoogleSheetsService {
 
             const prompt = `${SYSTEM_PROMPT}
 
-            user submited answer: ${newRecord} 
+            user submited answer: question1 - ${record.question1}, question2 - ${record.question2}, question3 - ${record.question3}, question4 - ${record.question4},question1 -  ${record.question5}, question6 - ${record.question6}, question7 - ${record.question7}, question8 - ${record.question8} ,question9 - ${record.question9}, question10 - ${record.question10}, question1- ${record.question11}
             suggest 2-3 perfect matches
             `;
 
