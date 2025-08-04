@@ -1,7 +1,8 @@
 const { z } = require('zod');
 
+
 const insertRecordSchema = z.object({
-    phone: z.string().optional(),
+    phone: z.union([z.string(), z.number()]).optional(),
     name: z.string().min(1, "Name is required"),
     email: z.string().email("Invalid email format").optional(),
     address: z.string().optional(),
@@ -15,12 +16,12 @@ const insertRecordSchema = z.object({
     question8: z.string().optional(),
     question9: z.string().optional(),
     question10: z.string().optional(),
-    age: z.string().optional(),
+    age: z.union([z.string(), z.number()]).optional(),
     finalSuggestedProduct: z.string().optional(),
 });
 
 const updateRecordSchema = z.object({
-    phone: z.string().optional(),
+    phone: z.union([z.string(), z.number()]).optional(),
     name: z.string().min(1, "Name is required").optional(),
     email: z.string().email("Invalid email format").optional(),
     address: z.string().optional(),
@@ -34,7 +35,7 @@ const updateRecordSchema = z.object({
     question8: z.string().optional(),
     question9: z.string().optional(),
     question10: z.string().optional(),
-    age: z.string().optional(),
+    age: z.union([z.string(), z.number()]).optional(),
     finalSuggestedProduct: z.string().optional(),
 });
 
