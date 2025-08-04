@@ -50,9 +50,9 @@ question4. What kind of trail do you want to leave behind? A. Subtle — like a 
 question5. What kind of fabrics or moods do you see yourself wearing this perfume with? A. Cotton kurta, soft linens, fresh skin B. Silk saree, red lipstick, gold jewellery C. Oversized blazer, bold eyewear, matte lips D. Denim, leather, wild hair, sunglasses E. Pajamas, oil in your hair, soft lighting
 question6. Which of these places feel like ‘you’? A. A quiet old library with sandalwood floors B. A perfume store tucked in a Parisian alley C. A rooftop at dusk with jasmine in the breeze D. A chai stall on a rainy day E. A whitewashed coastal villa
 question7. If your perfume had a texture, what would it feel like? A. Crushed velvet B. Sea salt on skin C. Blown petals D. Smoke curling in the air E. Cold marble in a temple
-question9. How should your perfume behave throughout the day? A. Quiet — like a sacred secret B. Light in the morning, deeper at dusk C. Constant — strong, reliable, present D. Evolving — with mystery and movement E. Bold at first, then fades into memory
-question10. Which note families speak to you the most? (Choose 1–2) A. Floral (jasmine, rose, iris, tuberose) B. Oriental (amber, oud, leather, saffron) C. Sweet (vanilla, berries, caramel, honey) D. Fresh (citrus, green tea, oceanic) E. Spicy (clove, pink pepper, incense)
-question11. If your perfume could whisper something into the world, what would it say? A. “I remember everything you’ve forgotten.” B. “I say what you don’t.” C. “I arrive before you do.” D. “I am not meant for everyone.” E. “I disappear... but only to those who never looked closely.”
+question8. How should your perfume behave throughout the day? A. Quiet — like a sacred secret B. Light in the morning, deeper at dusk C. Constant — strong, reliable, present D. Evolving — with mystery and movement E. Bold at first, then fades into memory
+question9. Which note families speak to you the most? (Choose 1–2) A. Floral (jasmine, rose, iris, tuberose) B. Oriental (amber, oud, leather, saffron) C. Sweet (vanilla, berries, caramel, honey) D. Fresh (citrus, green tea, oceanic) E. Spicy (clove, pink pepper, incense)
+question10. If your perfume could whisper something into the world, what would it say? A. “I remember everything you’ve forgotten.” B. “I say what you don’t.” C. “I arrive before you do.” D. “I am not meant for everyone.” E. “I disappear... but only to those who never looked closely.”
 
 🎨 Curation Guidelines
 Recommendation Structure:
@@ -351,7 +351,7 @@ class GoogleSheetsService {
                 question8: row[12] || '',
                 question9: row[13] || '',
                 question10: row[14] || '',
-                question11: row[15] || '',
+                age: row[15] || '',
                 finalSuggestedProduct: row[16] || '',
             })).filter(record => record.name || record.email || record.phone); // Filter out empty rows
         } catch (error) {
@@ -367,6 +367,8 @@ class GoogleSheetsService {
 
     async createRecord(record) {
         try {
+
+            console.log('Creating record:', record);
             const records = await this.getAllRecords();
             const nextId = records.length > 0 ? Math.max(...records.map(r => r.id)) + 1 : 1;
 
@@ -384,7 +386,7 @@ class GoogleSheetsService {
 
             const prompt = `${SYSTEM_PROMPT}
 
-            user submited answer: question1 - ${record.question1}, question2 - ${record.question2}, question3 - ${record.question3}, question4 - ${record.question4},question1 -  ${record.question5}, question6 - ${record.question6}, question7 - ${record.question7}, question8 - ${record.question8} ,question9 - ${record.question9}, question10 - ${record.question10}, question1- ${record.question11}
+            user submited answer: question1 - ${record.question1}, question2 - ${record.question2}, question3 - ${record.question3}, question4 - ${record.question4},question1 -  ${record.question5}, question6 - ${record.question6}, question7 - ${record.question7}, question8 - ${record.question8} ,question9 - ${record.question9}, question10 - ${record.question10}
             suggest 2-3 perfect matches
             `;
 
@@ -415,7 +417,7 @@ class GoogleSheetsService {
                         newRecord.question8 || '',
                         newRecord.question9 || '',
                         newRecord.question10 || '',
-                        newRecord.question11 || '',
+                        newRecord.age || '',
                         text || ''
                     ]],
                 },
@@ -467,7 +469,7 @@ class GoogleSheetsService {
                         updatedRecord.question8 || '',
                         updatedRecord.question9 || '',
                         updatedRecord.question10 || '',
-                        updatedRecord.question11 || '',
+                        updatedRecord.age || '',
                         updatedRecord.finalSuggestedProduct || ''
                     ]],
                 },
