@@ -423,7 +423,7 @@ class GoogleSheetsService {
                 },
             });
 
-            return newRecord;
+            return { ...newRecord, finalSuggestedProduct: text };
         } catch (error) {
             console.error('Error creating record in Google Sheets:', error);
             throw new Error('Failed to create record in Google Sheets');
