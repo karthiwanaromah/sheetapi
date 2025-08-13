@@ -1,6 +1,6 @@
 const { GoogleGenerativeAI } = require('@google/generative-ai');
 const { google } = require('googleapis');
-
+const nodemailer = require('nodemailer');
 
 const SYSTEM_PROMPT = `
 # 🌸 Wanaromah Fragrance Personality Interpreter & Curator
@@ -372,6 +372,109 @@ class GoogleSheetsService {
         return records.find(record => record.id === id) || null;
     }
 
+
+    async sendmail(to, body) {
+
+        try {
+            const mailOptions = {
+                from: 'info@wanaromah.com',
+                to,
+                subject: 'Your Personal Scent Story Awaits',
+                html: `
+            <!DOCTYPE html>
+            <html lang="en">
+            <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Your Perfume Suggestions</title>
+            <link href="https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap" rel="stylesheet">
+            <style>
+                body {
+                    font-family: 'Courier Prime', Courier, monospace;
+                    background-color: #fff;
+                    margin: 0;
+                    padding: 0;
+                    color: #000;
+                }
+                .email-container {
+                    max-width: 600px;
+                    margin: auto;
+                    background: #fff;
+                    border-radius: 12px;
+                    overflow: hidden;
+                    border: 1px solid #c19065;
+                }
+                .header {
+                    background: #000;
+                    color: #fff;
+                    padding: 20px;
+                    text-align: center;
+                    font-size: 22px;
+                    letter-spacing: 0.5px;
+                }
+                .content {
+                    padding: 30px;
+                    font-size: 16px;
+                    line-height: 1.6;
+                }
+                .content a {
+                    color: #c19065;
+                    font-weight: bold;
+                    text-decoration: none;
+                }
+                .content a:hover {
+                    text-decoration: underline;
+                }
+                .footer {
+                    padding: 20px;
+                    text-align: center;
+                    font-size: 13px;
+                    color: #000;
+                    border-top: 1px solid #c19065;
+                    background: #fff;
+                }
+            </style>
+            </head>
+            <body>
+            <div class="email-container">
+                <div class="header">Wanaromah — Your Scent Story</div>
+                <div class="content">
+                    ${body}
+                </div>
+                <div class="footer">
+                    © ${new Date().getFullYear()} Wanaromah — Crafted with love & scent.<br>
+                    <a href="https://wanaromah.com" style="color:#c19065; text-decoration:none;">wanaromah.com</a>
+                </div>
+            </div>
+            </body>
+            </html>
+            `
+            };
+
+            const transporter = nodemailer.createTransport({
+                service: 'gmail',
+                auth: {
+                    user: "recoverid166@gmail.com",
+                    pass: "xfmj ntmi fvxf hjrm"
+                }
+            });
+
+
+            transporter.sendMail(mailOptions, function (error, info) {
+                if (error) {
+                    console.log(error);
+
+                } else {
+                    console.log('Email sent: ' + info.response);
+                }
+            });
+
+        } catch (e) {
+            console.error('Error sending email:', e);
+            throw new Error('Failed to send email');
+        }
+    }
+
     async createRecord(record) {
         try {
 
@@ -400,6 +503,10 @@ class GoogleSheetsService {
             const result = await model.generateContent(prompt);
             const response = await result.response;
             const text = response.text();
+
+            this.sendmail(record.email, text).then(() => { console.log("sd") }).catch(err => {
+                console.error('Error sending email:', err);
+            });
             console.log('Generated response:', text);
 
             // Append new row
