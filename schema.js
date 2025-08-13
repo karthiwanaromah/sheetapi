@@ -16,7 +16,6 @@ const insertRecordSchema = z.object({
     question8: z.string().optional(),
     question9: z.string().optional(),
     question10: z.string().optional(),
-    age: z.union([z.string(), z.number()]).optional(),
     finalSuggestedProduct: z.string().optional(),
 });
 
@@ -35,7 +34,6 @@ const updateRecordSchema = z.object({
     question8: z.string().optional(),
     question9: z.string().optional(),
     question10: z.string().optional(),
-    age: z.union([z.string(), z.number()]).optional(),
     finalSuggestedProduct: z.string().optional(),
 });
 

@@ -424,7 +424,6 @@ class GoogleSheetsService {
                         newRecord.question8 || '',
                         newRecord.question9 || '',
                         newRecord.question10 || '',
-                        newRecord.age || '',
                         text || ''
                     ]],
                 },
