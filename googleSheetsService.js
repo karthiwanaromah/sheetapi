@@ -340,6 +340,7 @@ class GoogleSheetsService {
 
 
     async sendmail(to, body) {
+        const formattedResponse = body.replace(/\*\*(.*?)\*\*/g, "<b>$1</b>").replace(/\n/g, "<br>"); // Preserve line breaks
 
         try {
             const mailOptions = {
@@ -405,7 +406,7 @@ class GoogleSheetsService {
             <div class="email-container">
                 <div class="header">Wanaromah — Your Scent Story</div>
                 <div class="content">
-                    ${body}
+                    ${formattedResponse}
                 </div>
                 <div class="footer">
                     © ${new Date().getFullYear()} Wanaromah — Crafted with love & scent.<br>
